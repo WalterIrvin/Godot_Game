@@ -2,9 +2,9 @@ extends KinematicBody
 
 var gravity = Vector3.DOWN * 12;
 var speed = 50;
-var dirVec = get_global_transform().basis;
-var forward = -dirVec.z;
-var left = -dirVec.x;
+var dirVec = Vector3();
+var forward = Vector3();
+var left = Vector3();
 var velocity = Vector3();
 var jump_force = 500;
 var jumped = false;
@@ -22,7 +22,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3.UP);
 	velocity.x *= 1.0 - friction;
 	velocity.z *= 1.0 - friction;
-	if abs(velocity.y) <= 5:
+	if true:#abs(velocity.y) <= 5:
 		jumped = false;
 
 
